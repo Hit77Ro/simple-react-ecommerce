@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Product from "./Product";
 import fetcher from "./fetcher";
+import { Link, Outlet } from "react-router-dom";
 const api = "https://fakestoreapi.com/products";
 const caterogies_url = "https://fakestoreapi.com/products/categories";
 
@@ -35,7 +36,11 @@ export default function Products() {
     <div className="products">
       <div className="caterogies">
         {caterogies.map((cat) => (
-          <button key={cat} onClick={() => handleCategories(cat)} className="btn">
+          <button
+            key={cat}
+            onClick={() => handleCategories(cat)}
+            className="btn"
+          >
             {cat}{" "}
           </button>
         ))}
@@ -48,6 +53,16 @@ export default function Products() {
         ) : (
           <h1>no products yet</h1>
         )}
+        <nav>
+          <Link className="btn" to="text">
+            go to text{" "}
+          </Link>
+          <Link className="btn" to="contact">
+            go to contact{" "}
+          </Link>
+        </nav>
+
+        <Outlet/>
       </div>
     </div>
   );

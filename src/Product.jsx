@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Product({ product, showBtn }) {
   const { id, image: img, title, description } = product;
-  //   const cutText = (text, max) => text.split(" ", max).join(" ");
+  const navigate = useNavigate();
 
   return (
     <div className="product">
@@ -23,7 +23,9 @@ export default function Product({ product, showBtn }) {
             </Link>
           </>
         ) : (
-            <button className="btn back">back</button>
+          <button onClick={() => navigate(-1)} className="btn back">
+            back
+          </button>
         )}
       </div>
     </div>

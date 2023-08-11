@@ -1,0 +1,125 @@
+@use "./vars" as *;
+@use "./reset" as *;
+
+:root {
+  --nav-height: 70px;
+}
+.container {
+  max-width: 90%;
+  width: 100%;
+  margin: auto;
+  padding: 40px;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav {
+  background-color: rgba(247, 171, 117, 0.096);
+  min-height: var(--nav-height);
+
+  a {
+    transition: 0.4s;
+    display: block;
+    padding: 10px 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 3px orangered;
+    color: orangered;
+    background-color: white;
+    &:hover {
+      background-color: orangered;
+      color: white;
+    }
+    &:focus {
+      box-shadow: 0 0 0 6px rgba(orangered, 0.4);
+    }
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+}
+h1,
+h2,
+a {
+  text-transform: capitalize;
+}
+
+.products {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+  }
+  gap: 30px;
+}
+.btn {
+  display: block;
+  margin: auto;
+  background-color: white;
+  color: orangered;
+  padding: 10px 30px;
+  box-shadow: 0 0 0 4px rgba(orangered, 1);
+
+  border-radius: 10px;
+  &:hover,
+  &:focus {
+    background-color: orangered;
+    color: white;
+    box-shadow: 0 0 0 4px rgba(orangered, 0.4);
+  }
+}
+.details {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.product {
+  .img {
+    width: 400px;
+    min-height: 200px;
+    margin-bottom: 30px;
+    border-radius: inherit;
+    overflow: hidden;
+    img {
+      object-position: center;
+      max-height: 200px;
+      object-fit: contain;
+      display: block;
+    }
+  }
+  h1 {
+    font-size: 20px;
+    color: orangered;
+  }
+  p {
+    font-size: 16x;
+  }
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 1px rgba(black, 0.4), -1px -1px 1px rgba(black, 0.4);
+}
+
+.caterogies {
+  .btn {
+    margin: initial;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+a.active {
+  background-color: orangered;
+  color: white;
+  &:hover {
+    color: orangered;
+    background-color: white;
+  }
+}
